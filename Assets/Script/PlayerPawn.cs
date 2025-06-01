@@ -17,10 +17,16 @@ public class PlayerPawn : MonoBehaviour
 
     private Transform tf;
 
+    public Shooter shooter; // Reference to the Shooter class for shooting functionality
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         tf = transform;
+
+        shooter = GetComponent<Shooter>();
     }
 
     // Update is called once per frame
@@ -105,4 +111,11 @@ public class PlayerPawn : MonoBehaviour
         tf.position = tf.position + positionOffset;
     }
 
+    public void Shoot()
+    {
+        if (shooter != null)
+        {
+            shooter.Shoot();
+        } 
+    }
 }

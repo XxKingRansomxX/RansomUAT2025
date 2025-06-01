@@ -39,13 +39,17 @@ public class Health : MonoBehaviour
         {
             currentHealth = 0; //Tell the object to die
 
-            Death deathComponent = GetComponent<Death>(); // Get the Death component attached to the GameObject
+            InstaKill();    
+        }
+    }
 
-            if (deathComponent != null) // Check if the Death component exists
-            {
-                deathComponent.Die(); // Call the Die method on the Death component
-            }
-            
+    public void InstaKill()
+    {
+        Death deathComponent = GetComponent<Death>(); // Get the Death component attached to the GameObject
+
+        if (deathComponent != null) // Check if the Death component exists
+        {
+            deathComponent.Die(); // Call the Die method on the Death component
         }
     }
     public bool IsAlive() // This method always returns true, can be used for testing purposes

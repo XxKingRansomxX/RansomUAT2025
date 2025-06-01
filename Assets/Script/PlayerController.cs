@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public KeyCode worldLeft;
     public KeyCode worldRight;
 
+    public KeyCode shoot;
+
     public KeyCode turboIngaged; // Correctly defined as a KeyCode
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,6 +31,12 @@ public class PlayerController : MonoBehaviour
     {
         if (PlayerPawn != null)
         {
+            if (Input.GetKeyDown(shoot))
+            {
+                //Pawn shoots a projectile
+                PlayerPawn.Shoot();
+            }
+
             if (Input.GetKeyDown(teleportKey))
             {
                 // Teleport the player to a random position within the defined bounds
