@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1934851060129059319}
   - component: {fileID: 422344555278054090}
   - component: {fileID: 8314077529034143364}
+  - component: {fileID: 8123422564556482646}
+  - component: {fileID: -4244042682012658943}
   m_Layer: 0
   m_Name: meteor_0
   m_TagString: Untagged
@@ -211,4 +213,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 10
-  isInstaKill: 0
+  isInstaKill: 1
+--- !u!114 &8123422564556482646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9089174047343331983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99da2c0db249cdf41a08c957114bdbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4244042682012658943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9089174047343331983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648639d4932aa954484e74a13eae5323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minX: -10
+  maxX: 10
+  minY: -5
+  maxY: 5

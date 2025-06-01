@@ -19,6 +19,8 @@ public class PlayerPawn : MonoBehaviour
 
     public Shooter shooter; // Reference to the Shooter class for shooting functionality
 
+    [SerializeField] private GameOverStageComplete gameOverStageComplete;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -118,4 +120,6 @@ public class PlayerPawn : MonoBehaviour
             shooter.Shoot();
         } 
     }
+
+    
 }

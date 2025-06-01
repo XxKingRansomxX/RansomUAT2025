@@ -38,9 +38,6 @@ public class GameManager : MonoBehaviour
     public void UnregisterTarget()
     {
         targetCount--;
-        if (targetCount < 0)
-        {
-            targetCount = 0; // Ensure target count does not go negative
-        }
+       
     }
 }

@@ -8,17 +8,35 @@ public class Health : MonoBehaviour
     [SerializeField]
     private float maxHealth; // Maximum health value
 
+    [SerializeField] private GameOverStageComplete gameOver; // Correctly named and initialized field
+
+    private void Die()
+    {
+        // Call MeteorDeath.Explode if present
+        MeteorDeath meteorDeath = GetComponent<MeteorDeath>();
+        if (meteorDeath != null)
+        {
+            meteorDeath.Explode();
+            return; // Prevent further logic if it's a meteor
+        }
+
+        // Correctly call ShowGameOver method on gameOver
+        if (gameOver != null)
+        {
+            gameOver.ShowGameOver();
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    { 
-        
-
+    {
+        // Initialization logic if needed
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        // Update logic if needed
     }
 
     public void Heal(float amount)
@@ -37,9 +55,9 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            currentHealth = 0; //Tell the object to die
+            currentHealth = 0; // Tell the object to die
 
-            InstaKill();    
+            InstaKill();
         }
     }
 
@@ -52,14 +70,14 @@ public class Health : MonoBehaviour
             deathComponent.Die(); // Call the Die method on the Death component
         }
     }
-    public bool IsAlive() // This method always returns true, can be used for testing purposes
-    {
-        if (currentHealth > 0) 
-        {
-            return true;    
-        }
-       
-        return false; // Otherwise, the object is alive 
-    }
 
+    public bool IsAlive() // This method checks if the object is alive
+    {
+        if (currentHealth > 0)
+        {
+            return true;
+        }
+
+        return false; // Otherwise, the object is not alive
+    }
 }

@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class BulletShooter : Shooter
 {
-    
+    public float bulletDamage = 1f;
+
     public Transform firepointTransform;
 
     public GameObject bullet;
@@ -22,6 +23,12 @@ public class BulletShooter : Shooter
             if (rb != null)
             {
                 rb.AddForce(firepointTransform.up * fireForce);
+            }
+
+            Bullet bulletScript = bulletInstance.GetComponent<Bullet>();
+            if (bulletScript != null)
+            {
+                bulletScript.damage = bulletDamage;
             }
         }
     }
