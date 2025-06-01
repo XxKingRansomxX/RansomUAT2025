@@ -45,6 +45,7 @@ public class MeteorDeath : MonoBehaviour
             {
                 rb.AddForce(direction * 3f, ForceMode2D.Impulse);
             }
+
         }
 
 
