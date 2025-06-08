@@ -1,25 +1,28 @@
 using UnityEngine;
 
-public class MeteorDeath : MonoBehaviour
+public class MeteorDeath : Death
 {
     [SerializeField] private GameObject smallerMeteorPrefab;
     [SerializeField] private int pieces = 3;
     [SerializeField] private float spawnRadius = 0.5f;
     [SerializeField] private GameOverStageComplete gameOverStageComplete;
-
-    // Removed invalid code causing errors
-    // gameOverStageComplete.ShowStageComplete();
+    private int pointsToAward;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        pieces = Random.Range(2, 6); // Each meteor splits into 2–5 pieces
+
     }
 
     // Update is called once per frame
     void Update()
     {
         // Optional: Per-frame logic if needed
+    }
+
+    void OnDestroy()
+    {
+
     }
 
     // Call this method to make the meteor explode into smaller pieces and disappear
@@ -45,17 +48,14 @@ public class MeteorDeath : MonoBehaviour
             {
                 rb.AddForce(direction * 3f, ForceMode2D.Impulse);
             }
-
         }
-
-
-
-        // Show Stage Complete if this is the last meteor
-        if (FindObjectsOfType<MeteorDeath>().Length == 1 && gameOverStageComplete != null)
-        {
-            gameOverStageComplete.ShowStageComplete();
-        }
-
+        // Award points to the player
         Destroy(gameObject);
     }
-}    
+
+    // Implementation of the abstract method from the Death class
+    public override void Die()
+    {
+        Explode();
+    }
+}

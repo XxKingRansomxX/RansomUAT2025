@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Health : MonoBehaviour
 {
@@ -7,6 +9,8 @@ public class Health : MonoBehaviour
 
     [SerializeField]
     private float maxHealth; // Maximum health value
+
+    public Image healthBarImage; // Reference to the UI Image component representing the health bar
 
     [SerializeField] private GameOverStageComplete gameOver; // Correctly named and initialized field
 
@@ -47,6 +51,8 @@ public class Health : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+
+        UpdateHealthBar(); // Update the health bar UI
     }
 
     public void TakeDamage(float amount)
@@ -59,6 +65,8 @@ public class Health : MonoBehaviour
 
             InstaKill();
         }
+
+        UpdateHealthBar(); // Update the health bar UI
     }
 
     public void InstaKill()
@@ -69,9 +77,34 @@ public class Health : MonoBehaviour
         {
             deathComponent.Die(); // Call the Die method on the Death component
         }
+
+        UpdateHealthBar(); // Update the health bar UI
+    }
+
+    public void UpdateHealthBar() // This method updates the health bar UI
+    {
+        if (healthBarImage != null) // Check if the health bar image is assigned
+        {
+            healthBarImage.fillAmount = ComputeHealthPercentage() / 100f; // Update the health bar UI
+        }
+    }
+
+    public float ComputeHealthPercentage() // This method computes the health percentage of the object
+    {
+        return (currentHealth / maxHealth) * 100f; // Calculate and return the health percentage
     }
 
     public bool IsAlive() // This method checks if the object is alive
+    {
+        return currentHealth > 0;
+    }
+
+    // You have two methods with the same name and signature:
+    // public float ComputeHealthPercentage()
+    // Remove one of them to resolve CS0111.
+
+   
+    public bool IsAlive(int currentHealth) // This method checks if the object is alive
     {
         if (currentHealth > 0)
         {
