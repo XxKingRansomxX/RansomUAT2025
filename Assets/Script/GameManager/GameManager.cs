@@ -65,5 +65,16 @@ public class GameManager : MonoBehaviour
         { 
             scoreText.text = "Score: " + score; // Update the score text
         }
-    }  
+    }
+    public void ResetGame()
+    {
+        score = 0;
+        targetCount = 0;
+
+        if (scoreText != null)
+            scoreText.text = "Score: 0";
+
+        if (remainingText != null)
+            remainingText.text = "Remaining: 0";
+    }
 }

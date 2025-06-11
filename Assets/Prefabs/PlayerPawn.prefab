@@ -148,6 +148,7 @@ MonoBehaviour:
   rotationSpeedTurbo: 720
   worldTeleportSpeed: 1
   shooter: {fileID: 0}
+  gameOverStageComplete: {fileID: 0}
 --- !u!114 &1803901510643636628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,8 +174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c826dac1a2e21e14485b13bc00aa2f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInstaKill: 0
   currentHealth: 100
   maxHealth: 100
+  healthBarImage: {fileID: 0}
+  gameOver: {fileID: 0}
 --- !u!60 &3146137558530705256
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -294,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99da2c0db249cdf41a08c957114bdbb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsToAward: 100
 --- !u!114 &2322685446924026540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,8 +311,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 056a56c9ed3a81649bc1b38d022b7dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletDamage: 10
   firepointTransform: {fileID: 7553644183531064640}
   bullet: {fileID: 4368679150875030230, guid: b17e67cf4e02590418e3eede7e6a3e77, type: 3}
+  fireForce: 0
+  shootAudioSource: {fileID: 0}
+  shootAudioClip: {fileID: 0}
 --- !u!1 &8715326861334076638
 GameObject:
   m_ObjectHideFlags: 0

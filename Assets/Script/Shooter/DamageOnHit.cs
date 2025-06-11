@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class DamageonHit : MonoBehaviour
@@ -25,7 +26,5 @@ public class DamageonHit : MonoBehaviour
             // Apply damage to the health component
             health.TakeDamage(DamageAmount); // Use the correct type and method
         }
-
-        Destroy(gameObject);
     }
 }
