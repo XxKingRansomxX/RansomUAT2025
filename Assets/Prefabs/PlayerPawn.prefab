@@ -174,11 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c826dac1a2e21e14485b13bc00aa2f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInstaKill: 0
   currentHealth: 100
   maxHealth: 100
   healthBarImage: {fileID: 0}
-  gameOver: {fileID: 0}
+  isInstaKill: 0
 --- !u!60 &3146137558530705256
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -299,6 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToAward: 100
+  registerWithGameManager: 1
 --- !u!114 &2322685446924026540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 056a56c9ed3a81649bc1b38d022b7dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletDamage: 10
+  bulletDamage: 2
   firepointTransform: {fileID: 7553644183531064640}
   bullet: {fileID: 4368679150875030230, guid: b17e67cf4e02590418e3eede7e6a3e77, type: 3}
   fireForce: 0

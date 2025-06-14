@@ -3,26 +3,23 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
-    public float damage = 1f;
+    public float damage = 10f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Do not damage the player pawn
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject); // Optionally destroy the bullet, or remove this line if you want bullets to pass through
+            return;
+        }
+
+        // Deal damage to any other object with Health
         Health health = collision.gameObject.GetComponent<Health>();
         if (health != null)
         {
             health.TakeDamage(damage);
         }
-        Destroy(gameObject); // Destroy bullet on impact
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Destroy(gameObject);
     }
 }
