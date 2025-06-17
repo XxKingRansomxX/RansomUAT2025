@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float currentHealth = 100f;
     [SerializeField] private float maxHealth = 100f;
     public Image healthBarImage;
-    [SerializeField] private bool isInstaKill = false;
+
     private bool isDead = false;
 
     private void Die()
@@ -32,20 +32,9 @@ public class Health : MonoBehaviour
     {
         if (isDead) return;
         currentHealth -= amount;
-        if (currentHealth <= 0)
-        {
+        if (currentHealth < 0)
             currentHealth = 0;
-            if (isInstaKill)
-                InstaKill();
-            else
-                Die();
-        }
         UpdateHealthBar();
-    }
-
-    public void InstaKill()
-    {
-        Die();
     }
 
     public void UpdateHealthBar()

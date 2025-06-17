@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 192143fe1eea0f846ad45cb5a8c21c06
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - sfxSlider: {instanceID: 0}
+  - musicSlider: {instanceID: 0}
+  - sfxSource: {instanceID: 0}
+  - musicSource: {instanceID: 0}
+  - sliderTickClip: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
+  - uiAudioSource: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

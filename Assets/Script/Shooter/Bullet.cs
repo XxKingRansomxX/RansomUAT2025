@@ -7,19 +7,33 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Do not damage the player pawn
+        // Destroy bullet if it hits the player
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject); // Optionally destroy the bullet, or remove this line if you want bullets to pass through
+            Destroy(gameObject);
             return;
         }
 
-        // Deal damage to any other object with Health
+        // Destroy meteor using MeteorDeath if present
+        var meteor = collision.gameObject.GetComponent<MeteorMovement>();
+        if (meteor != null)
+        {
+            var death = collision.gameObject.GetComponent<MeteorDeath>();
+            if (death != null)
+                death.Die();
+            else
+                Destroy(collision.gameObject);
+            Destroy(gameObject);
+            return;
+        }
+
+        // Deal damage to any object with Health (optional)
         Health health = collision.gameObject.GetComponent<Health>();
         if (health != null)
         {
             health.TakeDamage(damage);
         }
+
         Destroy(gameObject);
     }
 }

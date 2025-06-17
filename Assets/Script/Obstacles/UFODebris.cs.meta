@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: b7ce4cd3443baf540904c49e62d6d3ff
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - smallDebrisPiecePrefab: {fileID: 7556868211298140516, guid: 995474ab40c1d5c469f89a9853868dc7, type: 3}
+  - explosionEffectPrefab: {fileID: 6716933543107358056, guid: 8a334e7c388e77347a1dddd727ef3446, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

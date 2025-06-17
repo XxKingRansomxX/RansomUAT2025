@@ -1,28 +1,24 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class HealthBarFollow : MonoBehaviour
 {
-    [SerializeField] private Transform target; // Assign the asteroid's transform in the Inspector
+    [SerializeField] private Transform target; // Assign the meteor or UFO's transform in the Inspector
     [SerializeField] private Vector3 offset = new Vector3(0, -1f, 0);
-    void LateUpdate()
-    {
-        // Always keep the health bar upright (no rotation)
-        transform.rotation = Quaternion.identity;
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (target != null)
         {
+            // Set position to always be at the bottom of the target (meteor or UFO)
             transform.position = target.position + offset;
-            transform.rotation = Quaternion.identity; // Keep upright
+            // Keep the health bar upright (no rotation)
+            transform.rotation = Quaternion.identity;
         }
+    }
+
+    void OnEnable()
+    {
+        // Ensure the health bar starts upright
+        transform.rotation = Quaternion.identity;
     }
 }

@@ -1,7 +1,6 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
-public class DamageonHit : MonoBehaviour
+public class DamageOnHit : MonoBehaviour
 {
     public float DamageAmount;
 

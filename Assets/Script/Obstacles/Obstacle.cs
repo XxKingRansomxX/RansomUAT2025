@@ -5,8 +5,7 @@ public class Obstacle : MonoBehaviour
     [SerializeField]
     private float damageAmount;
 
-    [SerializeField]
-    private bool isInstaKill;
+   
 
     
 
@@ -24,30 +23,11 @@ public class Obstacle : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D otherObject)
     {
-        
         Health healthComponent = otherObject.gameObject.GetComponent<Health>();
 
         if (healthComponent != null)
         {
-            if (isInstaKill)
-            {
-                healthComponent.InstaKill(); // Instantly kill the object if isInstaKill is true
-            }
-            else
-            {
-                healthComponent.TakeDamage(damageAmount);
-            }
-
-            Health health = GetComponent<Health>();
-
-            if (health != null)
-            {
-                health.InstaKill();
-            }
-
-
-            
-            
+            healthComponent.TakeDamage(damageAmount);
         }
     }
 }

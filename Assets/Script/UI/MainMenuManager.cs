@@ -3,41 +3,38 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
+    public GameObject mainMenuPanel; // Assign your main menu panel in the Inspector
+    public GameObject settingsPanel; // Assign your settings panel in the Inspector
+    public GameObject creditsPanel;  // Assign your credits panel in the Inspector
 
-    void Update()
-    {
-        
-    }
+    public KeyCode openMainMenuKey = KeyCode.Escape; 
 
+    // Call this from your Play/New Game button's OnClick event in the Inspector
     public void OnNewGame()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("GameScene"); // Use your game scene's exact name
     }
 
-    public void OnCredits()
-    {
-        SceneManager.LoadScene("CreditsScene");
-    }
-
+    // Call this from your Settings button's OnClick event in the Inspector
     public void OnSettings()
     {
-        SceneManager.LoadScene("SettingsScene");
+        SceneManager.LoadScene("SettingsScene"); // Use your settings scene's exact name
     }
 
-    public void OnQuit()
+    // Call this from your Credits button's OnClick event in the Inspector
+    public void OnCredits()
     {
-        Application.Quit();
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        SceneManager.LoadScene("CreditsScene"); // Use your credits scene's exact name
     }
 
-    public void OnMainMenu()
+    // Call this from your Back button's OnClick event in the Inspector (in Settings or Credits)
+    public void OnBackToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OnGameScene()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 }

@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: e13d5d485d33bea46b563be49e548282
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - smallMeteorPrefab: {fileID: 7556868211298140516, guid: 7a6e989a0e48d6f47ad983bf2f9267a7, type: 3}
+  - explosionEffectPrefab: {fileID: 6146545414153545494, guid: 0fc9a65778f4cba4c8306d2753163471, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
